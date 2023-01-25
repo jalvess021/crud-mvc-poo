@@ -7,5 +7,4 @@
     $controller = new clientsController();
 
     $controller -> {$action}(); //Chamando a funcao armazenada na variavel
-
 ?>

@@ -1,6 +1,14 @@
 <!-- Conexão com o banco de dados -->
 
 <?php
+
+    namespace App\Configuration;
+
+    //Constantes de rotas
+    define('BASEDIR', $_SERVER['DOCUMENT_ROOT'].'/crud-mvc-poo');
+    define('VIEWS', BASEDIR . '/View/modules/');
+
+    //Constante de conexão
     define('HOST', 'localhost');
     define('DATABASENAME', 'crud_mvc_poo');
     define('USER', 'root');
