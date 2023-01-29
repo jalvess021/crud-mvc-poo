@@ -1,8 +1,7 @@
-<!-- Consultas/regras de negócios-->
-
 <?php
 
-    require_once('./configuration/connect.php');
+    namespace App\Models;
+    use App\Configuration\Connect;
  
     Class ClientModel extends Connect{
         

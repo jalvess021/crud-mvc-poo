@@ -1,16 +1,20 @@
 <?php
-    
-    use App\Controller\Controller;
 
-    class clientsController extends Controller {
+    namespace App\Controllers;
+
+    use App\Controllers\Controller;
+    use App\Models\ClientModel;
+
+    class ClientsController extends Controller {
         private $model;
 
         public function __construct(){
-            $this -> model =  new ClientModel;
+            $this -> model = new ClientModel;
         }
-        public function getAll(){
+
+        public function index(){
             $resultData = $this -> model -> getAll();
-            parent::render('Client/listaClient');
+            parent::render('Client/listaClient', $resultData);
         }
     }
 ?>

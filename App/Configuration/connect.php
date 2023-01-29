@@ -1,12 +1,11 @@
-<!-- Conexão com o banco de dados -->
-
 <?php
 
     namespace App\Configuration;
-
+    use \PDO;
     //Constantes de rotas
     define('BASEDIR', $_SERVER['DOCUMENT_ROOT'].'/crud-mvc-poo');
-    define('VIEWS', BASEDIR . '/View/modules/');
+    define('VIEWS', BASEDIR . '/App/Views/modules/');
+    define('RAIZ', '/crud-mvc-poo');
 
     //Constante de conexão
     define('HOST', 'localhost');
