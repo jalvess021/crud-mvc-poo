@@ -19,6 +19,7 @@
         case RAIZ.'/save-client':
             $render = new ClientsController;
             $render -> saveClient();
+            break;
         /*
         case '/crud-mvc-poo':
             header('Location: \\crud-mvc-poo\App')

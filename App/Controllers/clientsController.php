@@ -30,7 +30,6 @@
                 $save -> email = $_POST['email']; 
                 $save -> phone = $_POST['phone']; 
                 $save -> insertClient();
-                parent::reder('Client/listaClient');
 
             }
     }

@@ -2,10 +2,13 @@
 
     namespace App\Models;
     use App\Configuration\Connect;
+    use \PDO;
  
     Class ClientModel extends Connect{
         
         private $table;
+
+        public $id, $name, $email, $phone;
 
         function __construct(){
             parent::__construct(); //Chama o construtor pai (Class connect)
@@ -18,18 +21,19 @@
             return $resultQuery;
         }
 
-        public $id, $name, $email, $phone;
-
         function insertClient(){
-            $sqlInsert = $this -> connect -> prepare("insert into clients values ?, ?, ?, ?;");
-            $sqlInsert -> bindValue(1, 0);
-            $sqlInsert -> bindParam(2, $nameClient, PDO::PARAM_STR);
-            $sqlInsert -> bindParam(2, $emailClient, PDO::PARAM_STR);
-            $sqlInsert -> bindParam(2, $phoneClient, PDO::PARAM_STR);
 
-            $nameClient = $name;
-            $emailClient = $email;
-            $phoneClient = $phone;
+            $idClient = $this -> id;
+            $nameClient = $this -> name;
+            $emailClient = $this -> email;
+            $phoneClient = $this -> phone;
+            
+    
+            $sqlInsert = $this -> connect -> prepare("insert into clients values ?, ?, ?, ?;");
+            $sqlInsert -> bindValue(1, $idClient, PDO::PARAM_INT);
+            $sqlInsert -> bindValue(2, $nameClient, PDO::PARAM_STR);
+            $sqlInsert -> bindValue(3, $emailClient, PDO::PARAM_STR);
+            $sqlInsert -> bindValue(4, $phoneClient, PDO::PARAM_STR);
 
             $sqlInsert -> execute();
         }
