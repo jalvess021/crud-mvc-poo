@@ -10,6 +10,15 @@
             $render -> index();
             //ClientsController::index();
             break;
+
+        case RAIZ.'/form-client':
+            $render = new ClientsController;
+            $render -> formClient();
+            break;
+
+        case RAIZ.'/save-client':
+            $render = new ClientsController;
+            $render -> saveClient();
         /*
         case '/crud-mvc-poo':
             header('Location: \\crud-mvc-poo\App')

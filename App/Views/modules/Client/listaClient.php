@@ -1,4 +1,5 @@
 <h1>Clients Lists</h1>
+<a href="<?php echo 'form-client';?>"><button>Novo Cliente</button></a>
     <div class='content'>
         <table>
             <thead>
