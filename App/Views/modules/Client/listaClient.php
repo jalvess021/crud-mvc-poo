@@ -8,6 +8,7 @@
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Telefone</th>
+                    <th>ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,6 +18,22 @@
                     <td><?= $data['name_client']?></td>
                     <td><?= $data['email_client']?></td>
                     <td><?= $data['phone_client']?></td>
+                    
+                        <td class='form-line'>
+                            <form action="<?= RAIZ . '/info-client'?>" method='post'>
+                                <input type="hidden" name='clientId' value="<?=$data['id_client']?>">
+                                <input type="submit" value='Visualizar'>
+                            </form>
+                            <form action="<?= RAIZ . '/edit-client'?>" method='post'>
+                                <input type="hidden" name='clientId' value="<?=$data['id_client']?>">
+                                <input type="submit" value='Editar'>
+                            </form>
+                            <form action="<?= RAIZ . '/delete-client'?>" method='post'>
+                                <input type="hidden" name='clientId' value="<?=$data['id_client']?>">
+                                <input type="submit" value='Excluir'>
+                            </form>
+                        </td>
+                    
                 </tr>
                 <?php endforeach;?> <!-- fecha o laço de repetição -->
             </tbody>
